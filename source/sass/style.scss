@@ -1,0 +1,19 @@
+/* style.scss */
+
+/* Base (Order Required) */
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/fonts';
+@import 'base/browsers';
+@import 'base/core';
+@import 'base/libraries';
+
+/* Core (No Order Required) */
+@import 'core/header';
+@import 'core/footer';
+
+/* Components (No Order Required) */
+
+
+/* Pages (No Order Required) */
+@import 'pages/home';

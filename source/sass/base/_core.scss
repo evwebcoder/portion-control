@@ -1,0 +1,55 @@
+/* _core.scss */
+
+/* Structures */
+
+html,
+body {
+  margin: 0;
+  padding: 0;  
+}
+
+body {
+    @include font-smoothing();
+    
+    background-color: #f3f3f3;
+    color: $body-text;
+    font-size: arial;
+    
+}
+
+a {
+  color: #858585;
+  text-decoration: none;
+  
+  &:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  &:visited,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.cgx_btn-y {  
+  font-family: arial;
+  font-weight: bold;
+  background-color: #f7d830;
+  color: #000;
+  text-transform: uppercase;
+  
+  &.btn-disable {
+    background-color: white !important;
+    border: 1px solid #dedede !important;
+    color: #b5b5b5 !important;
+    cursor: default;
+  }
+  
+  &:hover {
+      background-color: #fee727;
+      text-decoration: none;
+  }
+}
+

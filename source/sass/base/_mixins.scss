@@ -1,0 +1,146 @@
+/* Custom Web Fonts */
+@mixin font-face($family, $file, $style, $weight) {
+	$path: 'fonts/' + $file;
+	
+    @font-face {
+		font-family: $family;
+        font-style: $style;
+        font-weight: $weight;
+		
+        src: url($path + '.eot') format('eot');
+        src: url($path + '.eot?#iefix') format('embedded-opentype'),
+			url($path + '.woff') format('woff'),
+			url($path + '.ttf') format('truetype');
+		
+		@content;
+	}
+}
+
+/* Font Smoothing */
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+    }
+	
+    @else {
+        -moz-osx-font-smoothing: auto;
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+}
+
+/* Media Queries */
+@mixin min-width($size) {
+	@media only screen and (min-width: $size + px) {
+        @content;
+    }
+}
+
+@mixin max-width($size) {
+	@media only screen and (max-width: $size + px) {
+        @content;
+    }
+}
+
+@mixin min-and-max-width($min-size, $max-size) {
+	@media only screen and (min-width: $min-size + px) and (max-width: $max-size + px) {
+        @content;
+    }
+}
+
+@mixin min-height($size) {
+	@media only screen and (min-height: $size + px) {
+        @content;
+    }
+}
+
+@mixin max-height($size) {
+	@media only screen and (max-height: $size + px) {
+        @content;
+    }
+}
+
+@mixin min-and-max-height($min-size, $max-size) {
+	@media only screen and (min-height: $min-size + px) and (max-height: $max-size + px) {
+        @content;
+    }
+}
+
+@mixin min-width-and-max-width-and-max-height($min-width, $max-width, $max-height) {
+	@media only screen and (min-width: $min-width + px) and (max-width: $max-width + px) and (max-height: $max-height + px) {
+        @content;
+    }
+}
+
+/* Media Queries (Portrait) */
+@mixin phone-portait() {
+	@media only screen and (orientation: portrait) and (max-width: 767px) {
+		@content;
+	}
+}
+
+@mixin phone-portait-max-size($max-size) {
+	@media only screen and (orientation: portrait) and (max-width: $max-size + px) {
+		@content;
+	}
+}
+
+@mixin phone-portait-min-and-max-size($min-size, $max-size) {
+	@media only screen and (orientation: portrait) and (min-width: $min-size + px) and (max-width: $max-size + px) {
+		@content;
+	}
+}
+
+@mixin tablet-portait() {
+	@media only screen and (orientation: portrait) and (min-width: 768px) and (max-width: 991px) {
+		@content;
+	}
+}
+
+@mixin tablet-portait-min-and-max-size($min-size, $max-size) {
+	@media only screen and (orientation: portrait) and (min-width: $min-size + px) and (max-width: $max-size + px) {
+		@content;
+	}
+}
+
+/* Media Queries (Landscape) */
+@mixin phone-landscape() {
+	@media only screen and (orientation: landscape) and (max-width: 767px) {
+		@content;
+	}
+}
+
+@mixin phone-landscape-max-size($max-size) {
+	@media only screen and (orientation: landscape) and (max-width: $max-size + px) {
+		@content;
+	}
+}
+
+@mixin phone-landscape-min-and-max-size($min-size, $max-size) {
+	@media only screen and (orientation: landscape) and (min-width: $min-size + px) and (max-width: $max-size + px) {
+		@content;
+	}
+}
+
+@mixin tablet-landscape() {
+	@media only screen and (orientation: landscape) and (min-width: 768px) and (max-width: 991px) {
+		@content;
+	}
+}
+
+@mixin tablet-landscape-min-and-max-size($min-size, $max-size) {
+	@media only screen and (orientation: landscape) and (min-width: $min-size + px) and (max-width: $max-size + px) {
+		@content;
+	}
+}
+
+/* Variable Width Font Sizing */
+@function get-vh($font-size, $base-size) {
+	$vh-context: ($base-size * .01) * 1px;
+	@return ($font-size / $vh-context) * 1vh;
+}
+
+@function get-vw($font-size, $base-size) {
+	$vw-context: ($base-size * .01) * 1px;
+	@return ($font-size / $vw-context) * 1vw;
+}

@@ -1,0 +1,21 @@
+<div class="t-cell c-check">
+	<input type="checkbox" name="list-products[]" value="<%= ItemCode %>" tabindex="<%= (customTabindex + 2) %>">
+</div>
+<div class="t-cell c-sku"><%= ItemCode.split("-").pop() %></div>
+<div class="t-cell c-name">
+    <%= ItemName %>
+
+    
+</div>
+<div class="t-cell c-qty">
+	<input type="text" class="spinner" name="qty" value="1" tabindex="<%= (customTabindex + 1) %>">
+</div>
+<div class="t-cell c-price">$<%= RetailPrice %></div>	
+
+<% if(App.DebugMode == true){ %>
+<div class="debug-container">
+    <ul>
+        <li>ItemType: <%= ItemType %></li>
+    </ul>
+</div>
+<% } %>

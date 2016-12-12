@@ -1,0 +1,75 @@
+/* Android */
+.ua-android {
+    /* Chrome */
+    &.ua-chrome {}
+    
+    /* Firefox */
+    &.ua-firefox {}
+}
+
+/* Chrome */
+.ua-chrome {}
+
+/* Desktop-Only */
+.ua-desktop {
+    
+    
+}
+
+/* Firefox */
+.ua-firefox {
+    /* Chrome */
+    &.ua-chrome {}
+    
+    /* Firefox */
+    &.ua-firefox {}
+}
+
+/* Internet Explorer */
+.ua-ie {
+    &.ua-ie-11 {}
+
+    &.ua-ie-10 {
+        
+    }
+
+    &.ua-ie-9 {
+        
+    }
+}
+
+/* iOS */
+.ua-ios {
+    /* Chrome */
+    &.ua-chrome {}
+    
+    /* Firefox */
+    &.ua-firefox {}
+    
+    /* Safari */
+    .ua-safari {}
+}
+
+/* Microsoft Edge */
+.ua-edge {}
+
+/* OS X */
+.ua-mac_os_x {
+    /* Chrome */
+    &.ua-chrome {}
+    
+    /* Firefox */
+    &.ua-firefox {}
+}
+
+/* Safari */
+.ua-safari {}
+
+/* Windows */
+.ua-windows_nt {
+    /* Chrome */
+    &.ua-chrome {}
+    
+    /* Firefox */
+    &.ua-firefox {}
+}
