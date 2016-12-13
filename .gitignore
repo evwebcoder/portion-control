@@ -1,2 +1,28 @@
-# test
+# General web stuff
+.htaccess
+robots.txt
+
+# Various IDE and OS files that should never be committed
+.DS_Store
+*.swp
+*.lock
+__MACOSX
+/nbproject/*
+.project
+.buildpath
+.thumbs
+Thumbs.db
+build.properties
+.project
+.settings
+npm-debug.log
+
+# Grunt
+.sass-cache
+node_modules
+
+# Project
+resources/*.css
+resources/*.js
+resources/*.js.map
 
