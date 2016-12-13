@@ -2,19 +2,19 @@
 
 require.config({
 	paths: {
-	    "jquery": "../../libs/jquery/jquery-1.12.0.min",
+	    "jquery": "../../libs/jquery/jquery-3.1.1.min",
 	    "underscore": "../../libs/underscorejs/underscore-min",
 		"backbone": "../../libs/backbonejs/backbone-min",	
-		//"text": "../../libs/requirejs-text/text",
-		//"bootstrap": "../../libs/bootstrap/js/bootstrap.min",
-		//"jqueryui": "../../libs/jquery-ui-1.11.4.custom/jquery-ui.min",
-		//"jquery.ui.widget": "../../libs/jquery-ui-widget/jquery.ui.widget",
-		//"iframe-transport": "../../libs/jquery-fileupload/jquery-iframe-transport",
-		//"jquery-fileupload": "../../libs/jquery-fileupload/jquery-fileupload",
-		//"fancybox": "../../libs/fancybox/jquery.fancybox.pack",
-		//"backbone-validation": "../../libs/backbone-validation/backbone-validation-amd-min",
-		//"jquery-serialize-object": //"../../libs/jquery-serialize-object/jquery-serializeObject-min",
-		//"backbone-stickit": "../../libs/backbone-stickit/backbone-stickit"		
+		"text": "../../libs/requirejs-text/text",
+		"bootstrap": "../../libs/bootstrap/js/bootstrap.min",
+		"jqueryui": "../../libs/jquery-ui-1.11.4.custom/jquery-ui.min",
+		"jquery.ui.widget": "../../libs/jquery-ui-widget/jquery.ui.widget",
+		"iframe-transport": "../../libs/jquery-fileupload/jquery-iframe-transport",
+		"jquery-fileupload": "../../libs/jquery-fileupload/jquery-fileupload",
+		"fancybox": "../../libs/fancybox/jquery.fancybox.pack",
+		"backbone-validation": "../../libs/backbone-validation/backbone-validation-amd-min",
+		"jquery-serialize-object": "../../libs/jquery-serialize-object/jquery-serializeObject-min",
+		"backbone-stickit": "../../libs/backbone-stickit/backbone-stickit"		
 	},
 
     //Remember: only use shim config for non-AMD scripts,

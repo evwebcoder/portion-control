@@ -1,8 +1,8 @@
 {
-    "name": "Cognex",
+    "name": "PortionControl",
     "version": "1.0.0",
-    "description": "battlemedialab.com",
-    "author": "Battle Medialab",
+    "description": "Portion Control app",
+    "author": "E The Red",
     
     "devDependencies": {
         "grunt": "^0.4.5",
