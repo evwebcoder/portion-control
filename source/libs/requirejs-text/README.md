@@ -189,14 +189,18 @@ requirejs.config({
 
 ## License
 
-Dual-licensed -- new BSD or MIT.
+MIT
+
+## Code of Conduct
+
+[jQuery Foundation Code of Conduct](https://jquery.org/conduct/).
 
 ## Where are the tests?
 
-They are in the [requirejs](https://github.com/jrburke/requirejs) and
-[r.js](https://github.com/jrburke/r.js) repos.
+They are in the [requirejs](https://github.com/requirejs/requirejs) and
+[r.js](https://github.com/requirejs/r.js) repos.
 
 ## History
 
-This plugin was in the [requirejs repo](https://github.com/jrburke/requirejs)
+This plugin was in the [requirejs repo](https://github.com/requirejs/requirejs)
 up until the requirejs 2.0 release.
