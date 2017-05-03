@@ -1,17 +1,15 @@
 define([
-    "backbone", // Call Backbone when using Underscore 
+    "backbone", // Call Backbone when using Underscore
 	'text!templates/products-view/item.html',
-	"views/products-view/selected/item",
     "common"
 
 ], function (
         Backbone,
 		viewTemplate,
-		SelectedProductView,
         Common
 ) {
 	'use strict';
-	 
+
 
 	var ListProductView = Backbone.View.extend({
 		template: _.template(viewTemplate),
@@ -23,7 +21,7 @@ define([
 			"change .c-qty input": "productQty",
 			"click .c-qty .ui-spinner-button": "productQty",
             "keypress .c-qty input": "productQty"
-		},		
+		},
 		render: function () {
 		    this.el.innerHTML = this.template(this.model.toJSON());
 
@@ -36,12 +34,12 @@ define([
 			//console.log($(evt.currentTarget).is(':checked') ? 'checked' : 'unchecked');
 
 			// checked	condition
-			if($(evt.currentTarget).is(':checked')) {			
+			if($(evt.currentTarget).is(':checked')) {
 			    this.productSelected(evt);
-			} // unchecked condition 
+			} // unchecked condition
 			else {
 			    this.productUnselected(evt);
-			}			
+			}
 		},
 		selectProductPressEnter: function(evt) {
 		    // If user press ENTER key on checkbox field, we want to prevent app from jumping to next view
@@ -50,7 +48,7 @@ define([
 		        return false;
 		    }
 		},
-		productQty: function (evt) {			
+		productQty: function (evt) {
 		    var qtyVal = $(evt.currentTarget).closest(".product").find(".c-qty input").spinner("value");
 
 		    var code = evt.keyCode || evt.which;
@@ -61,7 +59,7 @@ define([
 		    // - then trigger the product select functionality
 		    // - and move to next focus item (due to issues applying focus, using the _.defer function fixed that issue)
 		    if (code === Common.ENTER_KEY) {
-		        this.model.set({ qty: qtyVal });		       
+		        this.model.set({ qty: qtyVal });
 		        $(evt.currentTarget).closest(".product").find(".c-check input").prop('checked', true);
 		        this.productSelected(evt);
 		        var currentTabindex = $(evt.currentTarget).attr("tabindex");
@@ -79,17 +77,17 @@ define([
 		productSelected: function (evt) {
 		    this.model.set({ selected: true });
 
-		    // disable item features	
+		    // disable item features
 		    $(evt.currentTarget).closest(".product").find(".c-qty input").spinner("disable");
 
 		    // add model to selectedView
-		    this.selectedView = new SelectedProductView({ model: this.model });
-		    $("#selected-products .list").append(this.selectedView.render().el);
+		    //this.selectedView = new SelectedProductView({ model: this.model });
+		   // $("#selected-products .list").append(this.selectedView.render().el);
 		},
 		productUnselected: function (evt) {
 		    this.model.set({ selected: false });
 
-		    // enable item features			
+		    // enable item features
 		    $(evt.currentTarget).closest(".product").find(".c-qty input").spinner("enable");
 
 		    // remove from selected view
@@ -101,4 +99,3 @@ define([
 
 	return ListProductView;
 });
-
