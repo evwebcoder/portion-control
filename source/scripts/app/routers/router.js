@@ -1,12 +1,12 @@
 
 define([
-    "views/products-view/list",
-    "collections/products-view/products",
+    "views/test-view/list",
+    "collections/test-view/items",
     "common"
 
 ], function (
-        ListProductsView,
-        ProductsProductsCollection,
+        TestItemsView,
+        TestItemsCollection,
         Common
 ){
 	"use strict";
@@ -15,47 +15,42 @@ define([
 	var AppRouter = Backbone.Router.extend({
     routes: {
       "": "render",
-      "home": "homeView"
+      "test": "testView"
 		},
 		initialize: function (options) {
       this.appView = options.view;
 
       // Initialize collections
-      this.listProductsCollection = new ProductsProductsCollection();
+      this.testItemsCollection = new TestItemsCollection();
 		},
 		render: function () {
       // Navigate to products page which is the app home page
-      //this.navigate("home", { trigger: true });
+      this.navigate("test", { trigger: true });
     },
-		homeView: function () {
+		testView: function () {
       var self = this;
 
-		    if (this.listProductsCollection.length == 0) {
+      var dummy_date = [
+          {
+            "name": "Apple"
+          },
+          {
+            "name": "Orange"
+          },
+          {
+            "name": "Banana"
+          }
+      ];
 
-		        // Send request to get products
-		        $.ajax({
-		            url: "/Util/get-products-api.aspx",
-		            type: "POST",
-		            contentType: "application/json",
-		            dataType: "json",
-		            success: function (data) {
-		                self.listProductsCollection.add(data.Items);
+      //this.testItemsCollection.add(dummy_date);
 
-		                // Render PRODUCTS page view
-		                self.productsView = new ListProductsView({
-		                    collection: self.listProductsCollection
-		                });
-		                self.appView.$el.find("main").html(self.productsView.render().el);
-		                self.appView.setView("page-products");
-		            },
-		            error: function (jqXHR, exception) {
-		                Common.getErrorMessage(jqXHR, exception);
-		                $("body").scrollTop(0);
-		            },
-		        });
-		    }
+      this.itemsView = new TestItemsView({
+          collection: this.testItemsCollection
+      });
 
-      }
+      this.appView.$el.find("main").html(this.itemsView.render().el);
+
+    }
 	});
 
   return AppRouter;

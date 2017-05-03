@@ -7,12 +7,12 @@ define([
     "use strict";
 
 
-	var ProductsProductModel = Backbone.Model.extend({
+	var TestItemModel = Backbone.Model.extend({
 		defaults: {
-			
+
 		}
 	});
 
 
-	return ProductsProductModel;
+	return TestItemModel;
 });
